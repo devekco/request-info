@@ -18,7 +18,7 @@ module.exports = robot => {
     }
 
     try {
-      const config = await context.config('config.yml', defaultConfig)
+      const config = await robot.config.get(context, defaultConfig)
 
       if (!config.requestInfoOn[eventSrc]) {
         return
